@@ -1,0 +1,151 @@
+body {
+    border: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    border: none;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: lightskyblue;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    border: none;
+    height: 80%;
+    display: flex;
+    margin-top: 110px;
+    background-color: rgb(179, 210, 223);
+}
+
+aside {
+    border: 2px solid black;
+    margin-top: 5px;
+    width: 20%;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    background-color: lightskyblue;
+}
+
+footer {
+    border: none;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    background-color: lightskyblue;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+    scroll-snap-align: start start;
+    scroll-margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    scroll-margin-top: 130px;
+}
+
+p {
+    text-align: justify;
+    text-indent: 2em;
+    margin: 12px 24px;
+}
+
+aside p {
+    text-align: center;
+    text-indent: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    text-indent: 0;
+}
+
+header nav ul li a {
+    display: block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+header nav ul li:hover a {
+    background-color: #e6f0ff;
+    color: #0b4db8;
+    transform: translateY(-1px);
+}
+
+main nav{
+    display: block;
+    
+}
+
+/* #saibamais ul {
+    width: fit-content;
+    margin: 0 auto;
+} */
+
+.principal {
+    border: none;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.principal::-webkit-scrollbar {
+    display: none;
+}
+
+.imagem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.imagem img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
