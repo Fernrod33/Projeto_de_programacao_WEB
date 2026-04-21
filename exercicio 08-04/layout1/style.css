@@ -1,0 +1,170 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "DM Sans", sans-serif;
+	background: #f7f5f2;
+	color: #1e1919;
+}
+
+.containerTopo {
+	width: 100%;
+	background: #ffffff;
+	border-bottom: 1px solid #e6e0db;
+	position: sticky;
+	top: 0;
+	z-index: 20;
+}
+
+header {
+	width: min(1200px, 96%);
+	margin: 0 auto;
+}
+
+.navbar {
+	min-height: 72px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.logo {
+	font-family: "Space Grotesk", sans-serif;
+	font-size: 1.5rem;
+	font-weight: 700;
+	letter-spacing: 0.01em;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+.nav-links a {
+	text-decoration: none;
+	color: #1e1919;
+	font-weight: 500;
+	padding: 10px 12px;
+	border-radius: 999px;
+}
+
+.nav-links a:hover {
+	background: #f3efea;
+}
+
+.language-icon {
+	width: 34px;
+	height: 34px;
+	border: 2px solid #1e1919;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+}
+
+.language-icon i {
+	font-size: 1rem;
+	line-height: 1;
+}
+
+.cta-button {
+	background: #0061ff;
+	color: #ffffff !important;
+	font-weight: 700;
+	padding: 11px 18px;
+}
+
+.cta-button:hover {
+	background: #0051d8 !important;
+}
+
+.containerPrincipal {
+	width: min(1200px, 96%);
+	margin: 48px auto;
+	display: grid;
+	grid-template-columns: 1.05fr 0.95fr;
+	gap: 36px;
+	align-items: stretch;
+}
+
+.conteudoPrincipal {
+	background: #ffffff;
+	border: 1px solid #e6e0db;
+	border-radius: 18px;
+	padding: clamp(24px, 3vw, 40px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 18px;
+}
+
+.conteudoPrincipal h1 {
+	font-family: "Space Grotesk", sans-serif;
+	font-size: clamp(2rem, 4vw, 3.35rem);
+	font-weight: 700;
+	line-height: 1.05;
+	max-width: 14ch;
+}
+
+.conteudoPrincipal p {
+	font-size: 1.05rem;
+	line-height: 1.6;
+	color: #3b3330;
+	max-width: 54ch;
+}
+
+.btn {
+	display: inline-block;
+	text-decoration: none;
+	color: #ffffff;
+	background: #1e1919;
+	padding: 12px 18px;
+	border-radius: 999px;
+	font-weight: 700;
+	width: fit-content;
+	margin-top: 8px;
+}
+
+.imagemPrincipal img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	border-radius: 18px;
+}
+
+@media (max-width: 900px) {
+	.containerPrincipal {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.navbar {
+		padding: 8px 0;
+	}
+
+	.nav-links {
+		gap: 8px;
+	}
+
+	.nav-links a {
+		padding: 8px 10px;
+		font-size: 0.95rem;
+	}
+
+	.conteudoPrincipal {
+		padding: 20px;
+	}
+
+	.conteudoPrincipal h1 {
+		max-width: 100%;
+	}
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Noticias - Página em HTML e CSS</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="noticia">
+            <div class="imagem">
+                <img src="assets/images1.jpg" alt="Notícia 1">
+            </div>
+            <div class="conteudo">
+                <p class="tipo">Geral</p>
+                <h2>Lorem ipsum dolor sit amet consectetur placeat nostrum, delectus, nihil quibusdam nobis veritatis deserunt, perspiciatis eligendi pariatur aliquid temporibus suscipit ipsum deleniti?</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur commodo.</p>
+                <div class="meta">
+                    <data class="data" datetime="2025-05-28"></data>
+                    <p class="tipo-noticia"></p>
+                </div>
+            </div>
+        </div>
+        <div class="noticia">
+            <div class="imagem">
+                <img src="assets/images2.jpg" alt="Notícia 2">
+            </div>
+            <div class="conteudo">
+                <p class="tipo">Economia</p>
+                <h2>Lorem ipsum dolor sit amet laceat nihil quibusdam nobis veritatis deserunt, perspiciatis eligendi pariatur aliquid temporibus suscipit ipsum deleniti?</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur commodo.</p>
+                <div class="meta">
+                    <data class="data" datetime="2026-03-01"></data>
+                    <p class="tipo-noticia"></p>
+                </div>
+            </div>
+        </div>
+        <div class="noticia">
+            <div class="imagem">
+                <img src="assets/images3.jpg" alt="Notícia 3">
+            </div>
+            <div class="conteudo">
+                <p class="tipo">Tecnologia</p>
+                <h2>Lorem ipsum dolor sit amet nihil quibusdam nobis veritatis deserunt, perspiciatis eligendi pariatur aliquid temporibus suscipit ipsum deleniti?</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur commodo.</p>
+                <div class="meta">
+                    <data class="data" datetime="2026-04-21"></data>
+                    <p class="tipo-noticia"></p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function formatarTempoRelativo(dataIso) {
+                const agora = new Date();
+                const dataPublicacao = new Date(dataIso);
+
+                if (Number.isNaN(dataPublicacao.getTime())) {
+                    return "data inválida";
+                }
+
+                const diferencaMs = agora - dataPublicacao;
+                const minutoMs = 60 * 1000;
+                const horaMs = 60 * minutoMs;
+                const diaMs = 24 * horaMs;
+                const semanaMs = 7 * diaMs;
+                const mesMs = 30 * diaMs;
+                const anoMs = 365 * diaMs;
+
+                if (diferencaMs < minutoMs) return "há instantes";
+
+                if (diferencaMs < horaMs) {
+                    const minutos = Math.floor(diferencaMs / minutoMs);
+                    return minutos === 1 ? "há 1 minuto" : `há ${minutos} minutos`;
+                }
+
+                if (diferencaMs < diaMs) {
+                    const horas = Math.floor(diferencaMs / horaMs);
+                    return horas === 1 ? "há 1 hora" : `há ${horas} horas`;
+                }
+
+                if (diferencaMs < semanaMs) {
+                    const dias = Math.floor(diferencaMs / diaMs);
+                    return dias === 1 ? "há 1 dia" : `há ${dias} dias`;
+                }
+
+                if (diferencaMs < mesMs) {
+                    const semanas = Math.floor(diferencaMs / semanaMs);
+                    return semanas === 1 ? "há 1 semana" : `há ${semanas} semanas`;
+                }
+
+                if (diferencaMs < anoMs) {
+                    const meses = Math.floor(diferencaMs / mesMs);
+                    return meses === 1 ? "há 1 mês" : `há ${meses} meses`;
+                }
+
+                const anos = Math.floor(diferencaMs / anoMs);
+                return anos === 1 ? "há 1 ano" : `há ${anos} anos`;
+            }
+
+            const datas = document.querySelectorAll(".data");
+            datas.forEach((elementoData) => {
+                const dataIso = elementoData.getAttribute("datetime");
+                elementoData.textContent = formatarTempoRelativo(dataIso);
+            });
+
+            const noticias = document.querySelectorAll(".noticia");
+            noticias.forEach((noticia) => {
+                const tipo = noticia.querySelector(".tipo");
+                const tipoNoticia = noticia.querySelector(".tipo-noticia");
+
+                if (!tipo || !tipoNoticia) {
+                    return;
+                }
+
+                tipoNoticia.textContent = `— Em ${tipo.textContent.trim()}`;
+            });
+        </script>
+    </body>
+</html>

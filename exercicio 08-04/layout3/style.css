@@ -1,0 +1,405 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-fundo: #ffffff;
+    --cor-fundo-secundario: #f6f8fa;
+    --cor-texto: #24292f;
+    --cor-texto-secundario: #57606a;
+    --cor-cinza-claro: #eaeef2;
+    --cor-cinza: #d0d7de;
+    --cor-cinza-escuro: #30363d;
+    --cor-destaque: #1f6feb;
+    --cor-destaque-hover: #388bfd;
+    --cor-roxo: #7928ca;
+    --cor-roxo-claro: #c084fc;
+    --fonte-principal: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    --transicao: all 0.3s ease;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.containerTopo {
+    background-color: var(--cor-fundo);
+    border-bottom: 1px solid var(--cor-cinza-claro);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+header {
+    padding: 0 16px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 65px;
+    gap: 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    transition: var(--transicao);
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+.nav-esquerda {
+    flex: 1;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--cor-texto-secundario);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transicao);
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: var(--cor-texto);
+    border-bottom-color: var(--cor-destaque);
+}
+
+.nav-direita {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.campoPesquisa {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--cor-cinza);
+    border-radius: 6px;
+    padding: 6px 12px;
+    gap: 8px;
+    background-color: var(--cor-fundo);
+    transition: var(--transicao);
+    max-width: 240px;
+}
+
+.campoPesquisa:focus-within {
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.1);
+}
+
+.campoPesquisa input {
+    border: none;
+    background: none;
+    outline: none;
+    font-family: var(--fonte-principal);
+    font-size: 14px;
+    color: var(--cor-texto);
+    flex: 1;
+    min-width: 120px;
+}
+
+.campoPesquisa input::placeholder {
+    color: var(--cor-texto-secundario);
+}
+
+.campoPesquisa button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    color: var(--cor-texto-secundario);
+    transition: var(--transicao);
+}
+
+.campoPesquisa button:hover {
+    color: var(--cor-destaque);
+}
+
+.containerPrincipal {
+    background: linear-gradient(180deg, var(--cor-fundo) 0%, var(--cor-fundo-secundario) 100%);
+    padding: 80px 16px;
+    text-align: center;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.containerPrincipal h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--cor-texto);
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+}
+
+.containerPrincipal p {
+    font-size: 20px;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+.cta-faixa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.campoEmail {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--cor-cinza);
+    border-radius: 6px;
+    padding: 6px 12px;
+    gap: 8px;
+    background-color: var(--cor-fundo);
+    transition: var(--transicao);
+    min-width: 320px;
+    max-width: 420px;
+    width: 100%;
+}
+
+.campoEmail:focus-within {
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.1);
+}
+
+.campoEmail input {
+    border: none;
+    background: none;
+    outline: none;
+    font-family: var(--fonte-principal);
+    font-size: 14px;
+    color: var(--cor-texto);
+    flex: 1;
+    min-width: 0;
+}
+
+.campoEmail input::placeholder {
+    color: var(--cor-texto-secundario);
+}
+
+.campoEmail button {
+    border: none;
+    background-color: var(--cor-destaque);
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 10px 16px;
+    font-family: var(--fonte-principal);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicao);
+    white-space: nowrap;
+}
+
+.campoEmail button:hover {
+    background-color: var(--cor-destaque-hover);
+    box-shadow: 0 4px 12px rgba(31, 111, 235, 0.2);
+}
+
+.containerPrincipal a.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: var(--transicao);
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: center;
+}
+
+.containerPrincipal a.btn.btn-secundario {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    border-color: var(--cor-cinza);
+}
+
+.containerPrincipal a.btn.btn-secundario:hover {
+    border-color: var(--cor-cinza-escuro);
+    background-color: var(--cor-fundo-secundario);
+}
+
+section {
+    padding: 60px 16px;
+    max-width: 1280px;
+    margin: 0 auto;
+    border-top: 1px solid var(--cor-cinza-claro);
+}
+
+section h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--cor-texto);
+}
+
+section p {
+    font-size: 16px;
+    color: var(--cor-texto-secundario);
+    line-height: 1.6;
+}
+
+footer {
+    background-color: var(--cor-fundo-secundario);
+    border-top: 1px solid var(--cor-cinza-claro);
+    padding: 40px 16px;
+    margin-top: 60px;
+}
+
+footer .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+}
+
+footer h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--cor-texto);
+    margin-bottom: 12px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 8px;
+}
+
+footer ul a {
+    color: var(--cor-texto-secundario);
+    text-decoration: none;
+    font-size: 13px;
+    transition: var(--transicao);
+}
+
+footer ul a:hover {
+    color: var(--cor-destaque);
+    text-decoration: underline;
+}
+
+footer .footer-bottom {
+    text-align: center;
+    border-top: 1px solid var(--cor-cinza-claro);
+    padding-top: 24px;
+    margin-top: 24px;
+    color: var(--cor-texto-secundario);
+    font-size: 13px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        gap: 12px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-direita {
+        gap: 12px;
+    }
+
+    .containerPrincipal h1 {
+        font-size: 36px;
+    }
+
+    .containerPrincipal p {
+        font-size: 16px;
+    }
+
+    .cta-faixa {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .campoEmail {
+        min-width: 0;
+        max-width: none;
+    }
+
+    .containerPrincipal a.btn {
+        display: block;
+        width: 100%;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 640px) {
+    .nav-esquerda {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .containerPrincipal {
+        padding: 40px 16px;
+    }
+
+    .containerPrincipal h1 {
+        font-size: 24px;
+    }
+
+    .containerPrincipal p {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 40px 16px;
+    }
+
+    footer .container {
+        grid-template-columns: 1fr;
+    }
+}
